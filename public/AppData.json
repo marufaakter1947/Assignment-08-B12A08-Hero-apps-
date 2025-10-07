@@ -1,0 +1,295 @@
+[
+  {
+    "image": "https://i.ibb.co/KzRP1gcM/2013-weather-pro-app-1.jpg",
+    "title": "WeatherPro",
+    "companyName": "WeatherTech",
+    "id": 1,
+    "description": "Stay updated with real-time weather forecasts. Get hourly, daily, and weekly predictions. Plan your activities with confidence.",
+    "size": 45,
+    "reviews": 1200,
+    "ratingAvg": 4.5,
+    "downloads": 500000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 620 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/RpKjWdqw/fittrack-fitness-app-logo-track-health-workout-stock-photo-generative-ai-tracking-application-brandi.webp",
+    "title": "Fitness Tracker",
+    "companyName": "HealthApps",
+    "id": 2,
+    "description": "Monitor your workouts and health metrics. Track steps, calories, and heart rate. Achieve your fitness goals with personalized insights.",
+    "size": 30,
+    "reviews": 800,
+    "ratingAvg": 4.3,
+    "downloads": 300000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 80 },
+      { "name": "4 star", "count": 320 },
+      { "name": "5 star", "count": 340 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/RpVSRQZj/photo-editor.jpg",
+    "title": "Photo Editor Pro",
+    "companyName": "CreativeSoft",
+    "id": 3,
+    "description": "Enhance your photos with advanced editing tools. Apply filters, adjust brightness, and crop images effortlessly.",
+    "size": 60,
+    "reviews": 1500,
+    "ratingAvg": 4.7,
+    "downloads": 700000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 450 },
+      { "name": "5 star", "count": 900 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/JSqJkG4/music.webp",
+    "title": "Music Streamer",
+    "companyName": "TuneIn",
+    "id": 4,
+    "description": "Stream your favorite music and podcasts. Discover new artists and playlists. Enjoy high-quality audio on the go.",
+    "size": 50,
+    "reviews": 1100,
+    "ratingAvg": 4.6,
+    "downloads": 600000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 120 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 510 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/B5bgfVgn/task-manager.webp",
+    "title": "Task Manager",
+    "companyName": "ProductivityPlus",
+    "id": 5,
+    "description": "Organize your tasks and to-do lists. Set reminders and deadlines. Boost your productivity with intuitive features.",
+    "size": 25,
+    "reviews": 950,
+    "ratingAvg": 4.4,
+    "downloads": 450000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 40 },
+      { "name": "3 star", "count": 120 },
+      { "name": "4 star", "count": 300 },
+      { "name": "5 star", "count": 440 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/zHN1WZpV/language-learning-app.webp",
+    "title": "Language Learner",
+    "companyName": "EduTech",
+    "id": 6,
+    "description": "Learn new languages with interactive lessons. Practice speaking, listening, and writing skills. Track your progress over time.",
+    "size": 40,
+    "reviews": 1300,
+    "ratingAvg": 4.5,
+    "downloads": 550000,
+    "ratings": [
+      { "name": "1 star", "count": 60 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 150 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 640 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/4ZFBRrCp/news.webp",
+    "title": "News Reader",
+    "companyName": "InfoStream",
+    "id": 7,
+    "description": "Stay informed with the latest news articles. Customize your feed by topics and sources. Share articles with friends and family.",
+    "size": 35,
+    "reviews": 1000,
+    "ratingAvg": 4.2,
+    "downloads": 400000,
+    "ratings": [
+      { "name": "1 star", "count": 70 },
+      { "name": "2 star", "count": 60 },
+      { "name": "3 star", "count": 150 },
+      { "name": "4 star", "count": 350 },
+      { "name": "5 star", "count": 370 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/rGFCj7zB/recipe.png",
+    "title": "Recipe Finder",
+    "companyName": "CookMaster",
+    "id": 8,
+    "description": "Discover new recipes based on ingredients you have. Save your favorite recipes and create shopping lists. Cook like a pro.",
+    "size": 55,
+    "reviews": 1200,
+    "ratingAvg": 4.6,
+    "downloads": 650000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 630 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/pvLJBbFx/9-expense-manager-app.jpg",
+    "title": "Expense Tracker",
+    "companyName": "FinancePro",
+    "id": 9,
+    "description": "Manage your finances by tracking expenses and income. Set budgets and financial goals. Analyze spending patterns with charts.",
+    "size": 60,
+    "reviews": 1100,
+    "ratingAvg": 4.4,
+    "downloads": 500000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 40 },
+      { "name": "3 star", "count": 120 },
+      { "name": "4 star", "count": 350 },
+      { "name": "5 star", "count": 540 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/XkvPNV8t/meditation.jpg",
+    "title": "Meditation Guide",
+    "companyName": "ZenApps",
+    "id": 10,
+    "description": "Achieve mental peace with guided meditation sessions. Choose from various themes like stress relief and sleep aid. Track your mindfulness journey.",
+    "size": 25,
+    "reviews": 950,
+    "ratingAvg": 4.7,
+    "downloads": 400000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 15 },
+      { "name": "3 star", "count": 60 },
+      { "name": "4 star", "count": 250 },
+      { "name": "5 star", "count": 605 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/qYBZ8BXd/travelplanner.jpg",
+    "title": "Travel Planner",
+    "companyName": "GlobeTrotter",
+    "id": 11,
+    "description": "Plan your trips with itinerary management. Book flights, hotels, and activities. Share your travel plans with friends.",
+    "size": 70,
+    "reviews": 1400,
+    "ratingAvg": 4.3,
+    "downloads": 600000,
+    "ratings": [
+      { "name": "1 star", "count": 60 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 150 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 740 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/x8scMNSN/ebook.jpg",
+    "title": "E-book Reader",
+    "companyName": "ReadMore",
+    "id": 12,
+    "description": "Read your favorite e-books with customizable settings. Sync your library across devices. Highlight text and add notes.",
+    "size": 40,
+    "reviews": 1100,
+    "ratingAvg": 4.5,
+    "downloads": 500000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 550 }
+    ]
+  },
+  
+  {
+    "image": "https://i.ibb.co/JjgmNYqm/images.jpg",
+    "title": "Photo Editor",
+    "companyName": "SnapMagic",
+    "id": 14,
+    "description": "Edit photos with advanced filters and effects. Crop, rotate, and adjust lighting easily. Share instantly.",
+    "size": 70,
+    "reviews": 900,
+    "ratingAvg": 4.3,
+    "downloads": 400000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 25 },
+      { "name": "3 star", "count": 120 },
+      { "name": "4 star", "count": 300 },
+      { "name": "5 star", "count": 415 }
+    ]
+  },
+ 
+
+  {
+    "image": "https://i.ibb.co/wFpbTvZK/weather.jpg",
+    "title": "Weather Forecast",
+    "companyName": "SkyCast",
+    "id": 16,
+    "description": "Get accurate weather updates, hourly forecasts, and severe weather alerts. Track multiple locations.",
+    "size": 35,
+    "reviews": 800,
+    "ratingAvg": 4.2,
+    "downloads": 350000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 15 },
+      { "name": "3 star", "count": 90 },
+      { "name": "4 star", "count": 300 },
+      { "name": "5 star", "count": 375 }
+    ]
+  },
+ 
+  {
+    "image": "https://i.ibb.co/5zdstXJ/66e40fa425b921531c0fdf45-calm.png",
+    "title": "Meditation App",
+    "companyName": "CalmMind",
+    "id": 18,
+    "description": "Relax with guided meditations, breathing exercises, and sleep stories. Reduce stress and improve focus.",
+    "size": 50,
+    "reviews": 1300,
+    "ratingAvg": 4.5,
+    "downloads": 600000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 750 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co/4g7jsmR9/app-icon-roundv3.png",
+    "title": "Recipe App",
+    "companyName": "CookMaster",
+    "id": 19,
+    "description": "Discover thousands of recipes, create shopping lists, and save your favorite meals. Step-by-step guides.",
+    "size": 45,
+    "reviews": 1000,
+    "ratingAvg": 4.4,
+    "downloads": 450000,
+    "ratings": [
+      { "name": "1 star", "count": 25 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 350 },
+      { "name": "5 star", "count": 505 }
+    ]
+  }
+]
+ 
