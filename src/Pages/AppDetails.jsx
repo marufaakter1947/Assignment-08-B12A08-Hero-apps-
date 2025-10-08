@@ -1,4 +1,4 @@
-import React from 'react';
+// import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import useApps from '../Hooks/useApps';
 import iconDownload from "../assets/Images/icon-downloads.png"
@@ -12,6 +12,8 @@ const AppDetails = () => {
     const app = apps.find(item => String(item.id) === id)
     console.log(app)
 
+    //   const [installed, setInstalled] = useState(false);
+
      if (!app) {
     return (
       <div className="flex justify-center items-center min-h-screen">
@@ -21,10 +23,25 @@ const AppDetails = () => {
   }
 
 
-    const {image,title,companyName,downloads,ratingAvg,reviews,size}=app
+    const {image,title,companyName,downloads,ratingAvg,reviews,size}=app || {}
+
+    const handleAddToInstallation =()=>{
+        const existingList = JSON.parse(localStorage.getItem("installList"))
+        let updatedList = []
+        if(existingList){
+            const isDuplicate = existingList.some(item => item.id === app.id)
+            if(isDuplicate) return alert("Already installed")
+             updatedList = [...existingList, app]
+        }
+        else{
+            updatedList.push(app)
+        }
+localStorage.setItem("installList", JSON.stringify(updatedList))
+    }
 
     return (
-       <div className='flex gap-10'>
+       <div>
+        <div className='flex gap-10'>
         <div>
             <img className='w-[350px] h-[350px] rounded' src={image} alt="" />
         </div>
@@ -51,13 +68,21 @@ const AppDetails = () => {
                 <h1 className='text-[40px] font-extrabold'>{reviews}</h1>
             </div>
         </div>
+        {/* <div>
+            <button onClick={() => setInstalled(true)}
+            disabled={installed} className='bg-[#00d390] text-white text-xl font-semibold px-[20px] py-[14px] rounded cursor-pointer'> {installed ? "Installed" : `Install Now (${size} MB)`}</button>
+        </div> */}
         <div>
-            <button className='bg-[#00d390] text-white text-xl font-semibold px-[20px] py-[14px] rounded'>Install Now ({size} MB)</button>
+            <button  onClick={handleAddToInstallation}
+             className='bg-[#00d390] text-white text-xl font-semibold px-[20px] py-[14px] rounded cursor-pointer'> {`Install Now (${size} MB)`}</button>
         </div>
         </div>
          
         
 
+
+       </div>
+        <div className='border-b-2 border-gray-400 mt-10 '></div>
 
        </div>
     );
