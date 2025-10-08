@@ -1,4 +1,3 @@
-// import React, { useState } from 'react';
 import { useParams } from "react-router";
 import useApps from "../Hooks/useApps";
 import iconDownload from "../assets/Images/icon-downloads.png";
@@ -7,24 +6,27 @@ import iconReview from "../assets/Images/icon-review.png";
 import {
   Bar,
   BarChart,
-  CartesianGrid,
   Legend,
-  Rectangle,
   ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
-// import { useState } from 'react';
+import { useEffect, useState } from "react";
 
 const AppDetails = () => {
-  //  const [installList, setInstallList] = useState([]);
   const { id } = useParams();
   const { apps } = useApps();
   const app = apps.find((item) => String(item.id) === id);
-  console.log(app);
 
-  //   const [installed, setInstalled] = useState(false);
+  const [isInstalled, setIsInstalled] = useState(false);
+
+  useEffect(() => {
+    if (!app) return;
+    const existingList = JSON.parse(localStorage.getItem("installList")) || [];
+    const installed = existingList.some((item) => item.id === app.id);
+    if (installed) setIsInstalled(true);
+  }, [app]);
 
   if (!app) {
     return (
@@ -40,16 +42,10 @@ const AppDetails = () => {
     app || {};
 
   const handleAddToInstallation = () => {
-    const existingList = JSON.parse(localStorage.getItem("installList"));
-    let updatedList = [];
-    if (existingList) {
-      const isDuplicate = existingList.some((item) => item.id === app.id);
-      if (isDuplicate) return alert("Already installed");
-      updatedList = [...existingList, app];
-    } else {
-      updatedList.push(app);
-    }
+    const existingList = JSON.parse(localStorage.getItem("installList")) || [];
+    const updatedList = [...existingList, app];
     localStorage.setItem("installList", JSON.stringify(updatedList));
+    setIsInstalled(true);
   };
 
   return (
@@ -86,24 +82,19 @@ const AppDetails = () => {
               <h1 className="text-[40px] font-extrabold">{reviews}</h1>
             </div>
           </div>
-          {/* <div>
-            <button onClick={() => setInstalled(true)}
-            disabled={installed} className='bg-[#00d390] text-white text-xl font-semibold px-[20px] py-[14px] rounded cursor-pointer'> {installed ? "Installed" : `Install Now (${size} MB)`}</button>
-        </div> */}
+
           <div>
             <button
               onClick={handleAddToInstallation}
               className="bg-[#00d390] text-white text-xl font-semibold px-[20px] py-[14px] rounded cursor-pointer"
+              disabled={isInstalled}
             >
-              {" "}
-              {`Install Now (${size} MB)`}
+              {isInstalled ? "Installed" : `Install Now (${size} MB)`}
             </button>
           </div>
         </div>
       </div>
       <div className="border-b-2 border-gray-400 mt-10 "></div>
-
-     
 
       {/* Chart */}
       <div className="space-y-3 mt-10 border rounded border-gray-300 mb-10">
@@ -111,7 +102,6 @@ const AppDetails = () => {
         <div className="h-80">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart layout="vertical" data={app.ratings}>
-              
               <XAxis type="number" dataKey="count" />
               <YAxis type="category" dataKey="name" reversed />
               <Tooltip />
@@ -121,12 +111,10 @@ const AppDetails = () => {
           </ResponsiveContainer>
         </div>
       </div>
-<div>
-    <h1 className="text-2xl font-semibold mb-6">Description</h1>
-    <p className="text-[#627382] text-xl">{app.description}</p>
-</div>
-      
-
+      <div>
+        <h1 className="text-2xl font-semibold mb-6">Description</h1>
+        <p className="text-[#627382] text-xl">{app.description}</p>
+      </div>
     </div>
   );
 };
