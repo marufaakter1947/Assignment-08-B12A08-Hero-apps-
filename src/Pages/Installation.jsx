@@ -13,9 +13,9 @@ const Installation = () => {
 
   const sortedItem = (() => {
     if (sortOrder === "size-asc") {
-      return [...installList].sort((a, b) => a.size - b.size);
+      return [...installList].sort((a, b) => a.downloads - b.downloads);
     } else if (sortOrder === "size-desc") {
-      return [...installList].sort((a, b) => b.size - a.size);
+      return [...installList].sort((a, b) => b.downloads - a.downloads);
     } else {
       return installList;
     }
@@ -54,7 +54,7 @@ toast.success(`${uninstalledApp.title} uninstalled!`);}
               value={sortOrder}
               onChange={(e) => setSortOrder(e.target.value)}
             >
-              <option value="none">Sort By Size</option>
+              <option value="none">Sort By Downloads</option>
               <option value="size-asc">Low-&gt;High</option>
               <option value="size-desc">High-&gt;Low</option>
             </select>

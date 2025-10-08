@@ -22,6 +22,7 @@ const Home = () => {
             <p className='text-xl text-[#627382] text-center mb-10'>Explore All Trending Apps on the Market developed by us</p>
            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
              {
+                
                 trendingApps.map(app =>(
                     <AppCard key={app.id} app={app}></AppCard>
                 ))
