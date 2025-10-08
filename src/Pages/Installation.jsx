@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 const Installation = () => {
   const [installList, setInstallList] = useState([]);
@@ -24,8 +25,12 @@ const Installation = () => {
   const handleUninstall = (id)=>{
     const existingList = JSON.parse(localStorage.getItem("installList"))
         let updatedList = existingList.filter(item => item.id !== id)
+        const uninstalledApp = existingList.find(item => item.id === id);
+
        setInstallList(prev => prev.filter(item => item.id !== id))
 localStorage.setItem("installList", JSON.stringify(updatedList))
+if(uninstalledApp){
+toast.success(`${uninstalledApp.title} uninstalled!`);}
   }
 
   return (

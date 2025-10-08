@@ -55,7 +55,7 @@ const AppDetails = () => {
     <div>
       <div className="flex gap-10">
         <div>
-          <img className="w-[350px] h-[350px] rounded" src={image} alt="" />
+          <img className="w-[350px] h-[350px] rounded object-cover" src={image} alt="" />
         </div>
         <div className="flex-1">
           <div>
