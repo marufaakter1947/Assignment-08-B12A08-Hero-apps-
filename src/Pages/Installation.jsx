@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { toast } from "react-toastify";
+import useApps from "../Hooks/useApps";
+import LoadingAnimation from "../Components/LoadingAnimation";
 
 const Installation = () => {
+    const {loading} = useApps();
   const [installList, setInstallList] = useState([]);
   const [sortOrder, setSortOrder] = useState("none");
   useEffect(() => {
@@ -33,7 +36,15 @@ if(uninstalledApp){
 toast.success(`${uninstalledApp.title} uninstalled!`);}
   }
 
-  return (
+  if(loading){
+    return(
+        <div>
+        <LoadingAnimation></LoadingAnimation>
+    </div>
+    )
+  }
+  else{
+return (
     <div>
       <div className="text-center">
         <h1 className="text-[48px] font-bold">My Installed Apps</h1>
@@ -104,6 +115,9 @@ toast.success(`${uninstalledApp.title} uninstalled!`);}
       </div>
     </div>
   );
+  }
+
+  
 };
 
 export default Installation;

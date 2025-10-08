@@ -4,13 +4,22 @@ import Banner from '../Components/Banner';
 import BannerCard from '../Components/BannerCard';
 import useApps from '../Hooks/useApps';
 import { NavLink } from 'react-router';
+import LoadingAnimation from '../Components/LoadingAnimation';
 
 const Home = () => {
      
     const {apps,loading,error} = useApps();
     
     const trendingApps = apps.slice(0,8)
-    return (
+   if(loading){
+    return(
+        <div>
+        <LoadingAnimation></LoadingAnimation>
+    </div>
+    )
+   }
+   else{
+     return (
         <div>
             <div>
                 <Banner></Banner>
@@ -34,6 +43,7 @@ const Home = () => {
            </div>
         </div>
     );
+   }
 };
 
 export default Home;
