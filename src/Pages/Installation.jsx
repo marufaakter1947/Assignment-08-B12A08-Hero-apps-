@@ -4,10 +4,23 @@ import { FiDownload } from 'react-icons/fi';
 
 const Installation = () => {
     const [installList ,setInstallList] = useState([])
+    const [sortOrder, setSortOrder] = useState("none")
     useEffect(()=>{
         const installedList = JSON.parse(localStorage.getItem("installList"))
         if(installedList) setInstallList(installedList)
     }, [])
+
+const sortedItem = (()=>{
+    if(sortOrder === "size-asc"){
+        return [...installList].sort((a,b)=> a.size - b.size)
+    }else if(sortOrder === "size-desc"){
+        return [...installList].sort((a,b)=> b.size - a.size)
+    }
+    else{
+       return installList
+    }
+})()
+
     return (
         <div>
             <div className='text-center'>
@@ -16,19 +29,25 @@ const Installation = () => {
             </div>
             <div className='flex justify-between items-center mt-10 mb-4'>
                 <div>
-                    <h2 className='text-[24px] font-semibold'>{installList.length} Apps Found</h2>
+                    <h2 className='text-[24px] font-semibold'>{sortedItem.length} Apps Found</h2>
                 </div>
                 <div>
-                    <button className='btn'>Sort By Size</button>
+                    <label className='form-control  max-w-xs'>
+                        <select className='select select-bordered' value={sortOrder} onChange={e =>setSortOrder(e.target.value)}>
+                        <option value="none">Sort By Size</option>
+                        <option value="size-asc">Low-&gt;High</option>
+                        <option value="size-desc">High-&gt;Low</option>
+                    </select>
+                    </label>
                 </div>
             </div>
            
            <div>
-            {installList.map(item =>(
+            {sortedItem.map(item =>(
                 <div key={item.id} className=''>
 <div className='flex justify-between items-center bg-[#FFFFFF]  p-4 rounded mb-4'>
     <div className='flex gap-4'>
-        <div><img className='w-20 h-20 rounded-lg' src={item.image} alt="" /></div>
+        <div><img className='w-20 h-20 rounded-lg object-cover' src={item.image} alt="" /></div>
         <div>
             <h1 className='text-[20px] font-medium mb-4'>{item.title}</h1>
             <div className='flex gap-4'>
