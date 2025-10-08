@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import useApps from '../Hooks/useApps';
-import Banner from '../Components/Banner';
 import AppCard from '../Components/AppCard';
+import errorApp from "../assets/Images/App-Error.png"
+import { NavLink } from 'react-router';
 
 const Apps = () => {
      const {apps} =useApps()
@@ -11,8 +12,25 @@ const Apps = () => {
    const searchedApps = term ? apps.filter(app => app.title.toLocaleLowerCase().includes(term)) : apps
    
     return (
+        
         <div>
-            <h1 className='text-[48px] font-bold text-center mb-4 '>Our All Applications</h1>
+            {
+                searchedApps.length === 0 ?(
+                    <div>
+                        <div className='flex justify-center items-center'>
+                            <img src={errorApp} alt="Error image" />
+                        </div>
+                        <div className='text-center mt-6 '>
+                            <h1 className='font-bold text-2xl mb-2 '>OPPS!! APP NOT FOUND</h1>
+                            <p className='font-semibold text-gray-400'>The App you are requesting is not found on our system.Please try another Apps.</p>
+                        </div>
+                        <div className='flex justify-center items-center'>
+                                   <button className='btn text-[16px] font-semibold bg-[linear-gradient(125.07deg,_#632EE3,_#9F62F2)] text-white mt-10  '><NavLink to="/">Go Back!</NavLink></button>
+                                  </div>
+                    </div>
+                ):(
+                    <div>
+                        <h1 className='text-[48px] font-bold text-center mb-4 '>Our All Applications</h1>
             <p className='text-xl text-[#627382] text-center mb-10'>Explore All Apps on the Market developed by us. We code for Millions</p>
             <div className='flex justify-between mb-[22px] items-center'>
                 <p className='text-xl md:text-2xl font-semibold '>({searchedApps.length})Apps Found</p>
@@ -41,6 +59,10 @@ const Apps = () => {
                 ))
             }
            </div>
+                    </div>
+                )
+            }
+            
         </div>
     );
 };
