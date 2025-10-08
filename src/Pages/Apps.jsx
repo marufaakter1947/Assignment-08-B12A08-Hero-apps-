@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import useApps from '../Hooks/useApps';
-import AppCard from '../Components/AppCard';
+import React, { useState } from "react";
+import useApps from "../Hooks/useApps";
+import AppCard from "../Components/AppCard";
 import errorApp from "../assets/Images/App-Error.png";
-import { NavLink } from 'react-router';
-import LoadingAnimation from '../Components/LoadingAnimation';
+import { NavLink } from "react-router";
+import LoadingAnimation from "../Components/LoadingAnimation";
 
 const Apps = () => {
   const { apps, loading } = useApps();
@@ -12,9 +12,8 @@ const Apps = () => {
 
   const term = search.trim().toLowerCase();
   const searchedApps = term
-    ? apps.filter(app => app.title.toLowerCase().includes(term))
+    ? apps.filter((app) => app.title.toLowerCase().includes(term))
     : apps;
-
 
   if (loading) {
     return (
@@ -27,7 +26,9 @@ const Apps = () => {
   return (
     <div className="px-4 md:px-8 lg:px-16">
       <div className="flex justify-between mb-6 items-center">
-        <p className="text-xl md:text-2xl font-semibold">({searchedApps.length}) Apps Found</p>
+        <p className="text-xl md:text-2xl font-semibold">
+          ({searchedApps.length}) Apps Found
+        </p>
         <div>
           <label className="input relative">
             <svg
@@ -35,7 +36,13 @@ const Apps = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
-              <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor">
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="m21 21-4.3-4.3"></path>
               </g>
@@ -56,7 +63,6 @@ const Apps = () => {
         </div>
       </div>
 
-      
       {searchLoading ? (
         <div className="flex justify-center items-center h-[60vh]">
           <LoadingAnimation />
@@ -68,7 +74,8 @@ const Apps = () => {
           </div>
           <h1 className="font-bold text-2xl mb-2">OPPS!! APP NOT FOUND</h1>
           <p className="font-semibold text-gray-400">
-            The App you are requesting is not found on our system. Please try another Apps.
+            The App you are requesting is not found on our system. Please try
+            another Apps.
           </p>
           <div className="flex justify-center items-center mt-6">
             <button className="btn text-[16px] font-semibold bg-[linear-gradient(125.07deg,_#632EE3,_#9F62F2)] text-white">
@@ -77,9 +84,10 @@ const Apps = () => {
           </div>
         </div>
       ) : (
-        
         <div>
-          <h1 className="text-[48px] font-bold text-center mb-4">Our All Applications</h1>
+          <h1 className="text-[48px] font-bold text-center mb-4">
+            Our All Applications
+          </h1>
           <p className="text-xl text-[#627382] text-center mb-10">
             Explore All Apps on the Market developed by us. We code for Millions
           </p>
