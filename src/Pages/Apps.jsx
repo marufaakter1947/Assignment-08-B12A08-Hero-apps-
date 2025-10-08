@@ -18,14 +18,14 @@ const Apps = () => {
                 searchedApps.length === 0 ?(
                     <div>
                         <div className='flex justify-center items-center'>
-                            <img src={errorApp} alt="Error image" />
+                            <img className='h-[200px]' src={errorApp} alt="Error image" />
                         </div>
                         <div className='text-center mt-6 '>
                             <h1 className='font-bold text-2xl mb-2 '>OPPS!! APP NOT FOUND</h1>
                             <p className='font-semibold text-gray-400'>The App you are requesting is not found on our system.Please try another Apps.</p>
                         </div>
                         <div className='flex justify-center items-center'>
-                                   <button className='btn text-[16px] font-semibold bg-[linear-gradient(125.07deg,_#632EE3,_#9F62F2)] text-white mt-10  '><NavLink to="/">Go Back!</NavLink></button>
+                                   <button className='btn text-[16px] font-semibold bg-[linear-gradient(125.07deg,_#632EE3,_#9F62F2)] text-white mt-6  '><NavLink to="/">Go Back!</NavLink></button>
                                   </div>
                     </div>
                 ):(

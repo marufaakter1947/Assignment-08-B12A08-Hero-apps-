@@ -1,12 +1,14 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { FiDownload } from 'react-icons/fi';
+import { Link } from 'react-router';
 
 const AppCard = ({app}) => {
     // console.log(app)
-    const {image,title,downloads,ratingAvg}=app;
+    const {image,title,downloads,ratingAvg,id}=app;
     return (
         <div className="card bg-base-100   shadow-sm hover:scale-105 transition ease-in-out px-4 py-4">
+            <Link to={`/app/${id}`}>
   <figure className='h-48 overflow-hidden '>
     <img className='w-full h-full object-cover  rounded-xl '
       src={image}
@@ -20,7 +22,7 @@ const AppCard = ({app}) => {
     </div>
    
    
- 
+ </Link>
 </div>
     );
 };
