@@ -13,6 +13,7 @@ import {
   YAxis,
 } from "recharts";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -26,6 +27,7 @@ const AppDetails = () => {
     const existingList = JSON.parse(localStorage.getItem("installList")) || [];
     const installed = existingList.some((item) => item.id === app.id);
     if (installed) setIsInstalled(true);
+    
   }, [app]);
 
   if (!app) {
@@ -46,6 +48,7 @@ const AppDetails = () => {
     const updatedList = [...existingList, app];
     localStorage.setItem("installList", JSON.stringify(updatedList));
     setIsInstalled(true);
+    toast.success(`${app.title} installed successfully!`);
   };
 
   return (
