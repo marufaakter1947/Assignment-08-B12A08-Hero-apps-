@@ -47,6 +47,7 @@ toast.success(`${uninstalledApp.title} uninstalled!`);}
 return (
     <div>
       <div className="text-center">
+       
         <h1 className="text-[48px] font-bold">My Installed Apps</h1>
         <p className="text-[#627382] text-[20px]">
           Explore All Trending Apps on the Market developed by us
