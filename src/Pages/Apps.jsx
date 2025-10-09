@@ -25,8 +25,8 @@ const Apps = () => {
 
   return (
     <div className="px-4 md:px-8 lg:px-16">
-      <div className="flex justify-between mb-6 items-center">
-        <p className="text-xl md:text-2xl font-semibold">
+      <div className="flex flex-col md:flex-row gap-2  md:justify-between mb-6 items-center">
+        <p className="text-xl md:text-2xl font-semibold mt-2">
           ({searchedApps.length}) Apps Found
         </p>
         <div>
@@ -85,13 +85,13 @@ const Apps = () => {
         </div>
       ) : (
         <div>
-          <h1 className="text-[48px] font-bold text-center mb-4">
+          <h1 className="text-[30px] md:text-[48px] font-bold text-center mb-4">
             Our All Applications
           </h1>
           <p className="text-xl text-[#627382] text-center mb-10">
             Explore All Apps on the Market developed by us. We code for Millions
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-2">
             {searchedApps.map((app) => (
               <AppCard key={app.id} app={app} />
             ))}

@@ -27,7 +27,6 @@ const AppDetails = () => {
     const existingList = JSON.parse(localStorage.getItem("installList")) || [];
     const installed = existingList.some((item) => item.id === app.id);
     if (installed) setIsInstalled(true);
-    
   }, [app]);
 
   if (!app) {
@@ -53,9 +52,13 @@ const AppDetails = () => {
 
   return (
     <div>
-      <div className="flex gap-10">
+      <div className="flex flex-col lg:flex-row gap-10">
         <div>
-          <img className="w-[350px] h-[350px] rounded object-cover" src={image} alt="" />
+          <img
+            className="w-[350px] h-[350px] rounded object-cover mt-2"
+            src={image}
+            alt=""
+          />
         </div>
         <div className="flex-1">
           <div>
@@ -68,8 +71,8 @@ const AppDetails = () => {
             </p>
           </div>
           <div className="border-b-2 border-gray-400 w-full "></div>
-          <div className="grid grid-cols-3 gap-10 mt-6 mb-6">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-6 mb-6">
+            <div className="">
               <img src={iconDownload} alt="icon" />
               <p className="text-[#001931] font-medium mt-2">Downloads</p>
               <h1 className="text-[40px] font-extrabold">{downloads}</h1>

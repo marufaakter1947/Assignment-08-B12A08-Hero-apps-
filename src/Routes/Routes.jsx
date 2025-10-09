@@ -9,33 +9,29 @@ import AppDetails from "../Pages/AppDetails";
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element:<RootLayout></RootLayout>,
-    errorElement:<ErrorPage></ErrorPage>,
+    path: "/",
+    element: <RootLayout></RootLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     hydrateFallbackElement: <p>Loading...</p>,
-    children:[
- {
-    index: true,
-    element:<Home></Home>,
-   
+    children: [
+      {
+        index: true,
+        element: <Home></Home>,
+      },
+      {
+        path: "/apps",
+        element: <Apps></Apps>,
+      },
+      {
+        path: "/installation",
+        element: <Installation></Installation>,
+      },
+      {
+        path: "/app/:id",
+        element: <AppDetails></AppDetails>,
+      },
+    ],
   },
-  {
-    path:"/apps",
-    element:<Apps></Apps>,
-  },
-  {
-    path:"/installation",
-    element:<Installation></Installation>,
-  },
-  {
-    path:"/app/:id",
-    element: <AppDetails></AppDetails>,
-  },
- 
-    ]
-  },
- 
-  
-])
+]);
 
-export default router
+export default router;
